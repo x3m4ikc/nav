@@ -12,6 +12,7 @@ import Settings from './Components/Settings/Settings';
 function App() {
   return (
     <div className="App">
+      <div className='background'>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/select' element={<SelectProgram />}/>
@@ -22,6 +23,7 @@ function App() {
         <Route path='/account' element={<Account />}/>
         <Route path='/settings' element={<Settings />}/>
       </Routes>
+      </div>
     </div>
   );
 }
