@@ -1,9 +1,11 @@
-import Sidebar from '../../Components/Sidebar/Sidebar';
+// import Sidebar from '../../Components/Sidebar/Sidebar';
+
+import Sidebarv2 from "../../Components/Sidebar/Sidebarv2";
 
 const Settings = () => {
     return (
         <div>
-            <Sidebar />
+            <Sidebarv2 />
             <h1>Settings page</h1>
         </div>
     )
