@@ -1,13 +1,16 @@
 import './Sidebarv2.css'
 import CurrentDate from '../DateTime/CurrentDate';
 import CurrentTime from '../DateTime/CurrentTime';
+import { useSubmenu } from '../../utils/SubmenuProvider';
 import { NavLink } from 'react-router-dom';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import ChangeHistoryOutlinedIcon from '@mui/icons-material/ChangeHistoryOutlined';
 import { Typography } from '@mui/material';
 
-const Sidebarv2 = () =>  {
+const Sidebar = () =>  {
 
+    const { isSubMenuOpen, toggleSubMenu} = useSubmenu();
     const setActive = ({isActive}) => isActive ? 'active' : 'nav-item';
 
     return (
@@ -33,9 +36,84 @@ const Sidebarv2 = () =>  {
                         </div>
                     </NavLink>
                 </li>
+                <li className='navigation-item'>
+                    <NavLink className={setActive}>
+                        <div className='list-item'>
+                            <SettingsOutlinedIcon className='nav-icon'/>
+                            <Typography variant='body1' className='nav-text'>Показания</Typography>
+                            <ChangeHistoryOutlinedIcon className='nav-text'/>
+                        </div>
+                    </NavLink>
+                    <ul className={`sumbenu ${isSubMenuOpen ? 'open' : '' }`}>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Температура</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Влажность и CO2</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                        <li className='navigation-item'>
+                         <NavLink to='/settings' className={setActive}>
+                            <div className='list-item'>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
+                            </div>
+                         </NavLink>
+                        </li>
+                    </ul>
+                </li>
+                <li className='navigation-item'>
+                    <NavLink to='/settings' className={setActive}>
+                        <div className='list-item'>
+                            <SettingsOutlinedIcon className='nav-icon'/>
+                            <Typography variant='body1' className='nav-text'>Пункт меню</Typography>
+                        </div>
+                    </NavLink>
+                </li>
+                <li className='navigation-item'>
+                    <NavLink to='/settings' className={setActive}>
+                        <div className='list-item'>
+                            <SettingsOutlinedIcon className='nav-icon'/>
+                            <Typography variant='body1' className='nav-text'>Пункт меню</Typography>
+                        </div>
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )
 }
 
-export default Sidebarv2;
+export default Sidebar;
