@@ -1,11 +1,13 @@
-import Sidebar from '../../Components/Sidebar/Sidebar';
+import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import TopBar from '../../Components/TopBar/TopBar';
+import { Box } from '@mui/material';
 
 const SwitchWater = () => {
     return (
-        <div>
+        <Box sx={{ display: 'flex'}}>
             <Sidebar />
-            <h1>SwitchWater page</h1>
-        </div>
+            <TopBar/>
+        </Box>
     )
 }
 

@@ -64,3 +64,9 @@ a {
 .submenu {
     padding: 8px;
 }
+
+.active {
+    color: #F0F4F2;
+    
+}
+

@@ -10,6 +10,8 @@ import { Typography } from '@mui/material';
 
 const Sidebar = () =>  {
 
+    // Background к активной ссылке
+
     const { isSubMenuOpen, toggleSubMenu} = useSubmenu();
     const setActive = ({isActive}) => isActive ? 'active' : 'nav-item';
 
@@ -29,7 +31,7 @@ const Sidebar = () =>  {
                     </NavLink>
                 </li>
                 <li className='navigation-item'>
-                    <NavLink to='/settings' className={setActive}>
+                    <NavLink to='/account' className={setActive}>
                         <div className='list-item'>
                             <SettingsOutlinedIcon className='nav-icon'/>
                             <Typography variant='body1' className='nav-text'>Пункт меню</Typography>
@@ -37,16 +39,18 @@ const Sidebar = () =>  {
                     </NavLink>
                 </li>
                 <li className='navigation-item'>
-                    <NavLink className={setActive}>
+                    {/* <NavLink className=''> */}
+                    <div className='nav-item'>
                         <div className='list-item'>
                             <SettingsOutlinedIcon className='nav-icon'/>
                             <Typography variant='body1' className='nav-text'>Показания</Typography>
                             <ChangeHistoryOutlinedIcon className='nav-text'/>
                         </div>
-                    </NavLink>
+                    </div>
+                    {/* </NavLink> */}
                     <ul className={`sumbenu ${isSubMenuOpen ? 'open' : '' }`}>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/switch-temp' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Температура</Typography>
@@ -54,7 +58,7 @@ const Sidebar = () =>  {
                          </NavLink>
                         </li>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/switch-water' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Влажность и CO2</Typography>
@@ -62,7 +66,7 @@ const Sidebar = () =>  {
                          </NavLink>
                         </li>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/account' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
@@ -70,7 +74,7 @@ const Sidebar = () =>  {
                          </NavLink>
                         </li>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/account' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
@@ -78,7 +82,7 @@ const Sidebar = () =>  {
                          </NavLink>
                         </li>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/account' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
@@ -86,7 +90,7 @@ const Sidebar = () =>  {
                          </NavLink>
                         </li>
                         <li className='navigation-item'>
-                         <NavLink to='/settings' className={setActive}>
+                         <NavLink to='/account' className={setActive}>
                             <div className='list-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <Typography variant='body1' className='nav-text'>Пункт подменю</Typography>
@@ -96,7 +100,7 @@ const Sidebar = () =>  {
                     </ul>
                 </li>
                 <li className='navigation-item'>
-                    <NavLink to='/settings' className={setActive}>
+                    <NavLink to='/account' className={setActive}>
                         <div className='list-item'>
                             <SettingsOutlinedIcon className='nav-icon'/>
                             <Typography variant='body1' className='nav-text'>Пункт меню</Typography>

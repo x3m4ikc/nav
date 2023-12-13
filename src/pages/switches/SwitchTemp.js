@@ -1,11 +1,13 @@
-import Sidebar from '../../Components/Sidebar/Sidebar';
+import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import TopBar from '../../Components/TopBar/TopBar';
+import { Box } from '@mui/material';
 
 const SwitchTemp = () => {
     return (
-        <div>
+        <Box sx={{ display: 'flex'}}>
             <Sidebar />
-            <h1>SwitchTemp page</h1>
-        </div>
+            <TopBar/>
+        </Box>
     )
 }
 
