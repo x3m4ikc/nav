@@ -1,9 +1,9 @@
-import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import NavMenu from "../../Components/NavMenu/NavMenu";
 
 const SelectProgram = () => {
     return (
         <div>
-            <Sidebar />
+            <NavMenu />
             <h1>SelectProgram page</h1>
         </div>
     )

@@ -1,10 +1,9 @@
-import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import NavMenu from "../../Components/NavMenu/NavMenu";
 
 const Home = () => {
     return (
         <div>
-            <Sidebar />
-            <h1>Home Page</h1>
+            <NavMenu />
         </div>
     )
 }

@@ -1,0 +1,50 @@
+.nav-menu {
+    width: 284px;
+    border-radius: 8px;
+    border: 1px solid #60876F;
+    background: rgba(51, 51, 51, 0.40);
+    display: flex;
+    flex-direction: column;
+    left: 16px;
+    top: 8px;
+    position: relative;
+}
+
+.navigation {
+    padding-left: 16px;
+    padding-top: 35px;
+    margin-bottom: 95px;
+}
+
+.sub-navigation {
+    padding-left: 8px;
+}
+
+li {
+    list-style: none;
+    padding-top: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #60876F;
+}
+
+.link-item {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+
+.nav-text {
+    margin-top: 1px;
+    margin-left: 15px;
+}
+
+.sub-navigation {
+    margin-left: 25px;
+}
+
+.icon-minus {
+    padding-left: 15px;
+}

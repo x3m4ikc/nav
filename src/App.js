@@ -14,7 +14,6 @@ function App() {
   return (
     <SubmenuProvider>
         <div className="App">
-        <div className='background'>
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/select' element={<SelectProgram />}/>
@@ -26,7 +25,6 @@ function App() {
             <Route path='/settings' element={<Settings />}/>
         </Routes>
         </div>
-      </div>
     </SubmenuProvider>
   );
 }

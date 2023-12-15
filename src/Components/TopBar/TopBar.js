@@ -19,7 +19,7 @@ const TopBar = () => {
                 <Box className='day-temp'>
                     <div className='icon-with-text'>
                         <WbSunnyOutlinedIcon className='temp-icon'/>
-                        <Typography className='temp-text'>Дневная температура</Typography>
+                        <Typography className='temp-text' style={{ fontSize: '16px' }}>Дневная температура</Typography>
                     </div>
                     <div className='switch-bar'>
                         <RemoveOutlinedIcon className='minus'/>
@@ -30,7 +30,7 @@ const TopBar = () => {
                 <Box className='night-temp'>
                     <div className='icon-with-text-night'>
                         <NightsStayOutlinedIcon className='temp-icon'/>
-                        <Typography className='temp-text'>Ночная температура</Typography>
+                        <Typography className='temp-text' style={{ fontSize: '16px' }}>Ночная температура</Typography>
                     </div>
                     <div className='switch-bar'>
                         <RemoveOutlinedIcon className='minus'/>

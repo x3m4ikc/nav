@@ -1,9 +1,9 @@
-import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import NavMenu from "../../Components/NavMenu/NavMenu";
 
 const SwitchEnergy = () => {
     return (
         <div>
-            <Sidebar />
+            <NavMenu />
             <h1>SwitchEnergy page</h1>
         </div>
     )

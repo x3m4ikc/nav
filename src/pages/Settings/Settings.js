@@ -1,12 +1,14 @@
 // import Sidebar from '../../Components/Sidebar/Sidebar';
-
-import Sidebarv2 from "../../Components/Sidebar/Sidebarv2";
+import './Settings.css'
+import NavMenu from "../../Components/NavMenu/NavMenu";
 
 const Settings = () => {
     return (
         <div>
-            <Sidebarv2 />
+            <NavMenu />
+            <div className="page">
             <h1>Settings page</h1>
+            </div>
         </div>
     )
 }

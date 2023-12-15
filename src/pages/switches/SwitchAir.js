@@ -1,9 +1,9 @@
-import Sidebar from '../../Components/Sidebar/Sidebarv2';
+import NavMenu from "../../Components/NavMenu/NavMenu";
 
 const SwitchAir = () => {
     return (
         <div>
-            <Sidebar />
+            <NavMenu />
             <h1>SwitchAir page</h1>
         </div>
     )

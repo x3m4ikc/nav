@@ -1,0 +1,24 @@
+.buttons-holder {
+    padding-left: 16px;
+    padding-top: 8px;
+}
+
+.but {
+    background-color: rgba(51, 51, 51, 0.40);
+    border: 1px solid #60876F;
+    border-radius: 8px;
+    color: #60876F;
+    padding: 12px 22px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.but-air {
+    background-color: rgba(51, 51, 51, 0.40);
+    border: 1px solid #60876F;
+    border-radius: 8px;
+    color: #60876F;
+    padding: 12px 132px;
+    font-size: 14px;
+    margin-left: 10px;
+}
