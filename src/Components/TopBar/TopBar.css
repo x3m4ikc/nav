@@ -20,12 +20,14 @@
 
 .icon-with-text-night {
     display: flex;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .switch-bar {
     display: flex;
-    margin-top: 20px;
+    margin-top: 13px;
+    background-color: #031F29;
+    padding: 10px;
 }
 
 .temp-changer {

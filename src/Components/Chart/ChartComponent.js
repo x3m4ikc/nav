@@ -1,45 +1,3 @@
-// import { Line } from "react-chartjs-2";
-// import { faker } from "@faker-js/faker";
-
-// const labels = ['Junuary', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-// const data = {
-//     labels,
-//     datasets: [
-//         {
-//             fill: true,
-//             label: 'Dataset 2',
-//             data: labels.map(() => 
-//                 faker.datatype.number({min: 0, max: 1000}),),
-//             borderColor: 'rgb(53, 162, 235)',
-//             backgroundColor: 'rgba(53, 162, 235, 0.5)',
-//         },
-//     ],
-// }
-
-// const options = {
-//     responsive: true,
-//     plugins: {
-//         legend: {
-//             position: 'top',
-//         },
-//         title: {
-//             display: true,
-//             text: 'Датчик 1'
-//         },
-//     },
-// }
-
-
-// const AreaChartComponent = () => {
-//     return <Line options={options} data={data}/>
-//     // return <Line />
-// }
-
-// // AreaChart - temp first
-
-// export default AreaChartComponent;
-
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -53,6 +11,7 @@ import {
   } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from "@faker-js/faker";
+import './ChartComponent.css';
   
 ChartJS.register(
     CategoryScale,
@@ -66,13 +25,28 @@ ChartJS.register(
   );
   
 export const options = {
+    maintainAspectRatio: false,
     responsive: true,
     scales: {
+        color: '#46F357',
         x: {
             grid: {
                 display: false,
-                background: '#FFFF',
+            },
+            ticks: {
+              color: '#60876F',
             }
+        },
+        y: {
+          border:{dash: [3, 3]},
+          grid: {
+            tickColor: '',
+            display: true,
+            color: '#60876F',
+          },
+          ticks: {
+            color: '#60876F',
+          }
         }
     },
     plugins: {
@@ -80,37 +54,51 @@ export const options = {
         display: false,
       },
       title: {
-        display: true,
-        text: 'Датчик №1',
+        display: false,
       },
     },
   };
   
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['Фев 06', 'Фев 07', 'Фев 08', 'Фев 09', 'Фев 10', 'Фев 11', 'Фев 12'];
   
 export const data = {
     labels,
     datasets: [
       {
         label: 'Dataset 2',
-        data: labels.map(() => faker.number.float({ min: 5, max: 40 })
+        data: labels.map(() => faker.number.float({ min: 10, max: 50 })
         ),
         fill: 'start',
         borderWidth: 1,
+        borderColor: '#6fff8c',
         backgroundColor: (context) => {
             const ctx = context.chart.ctx
             const gradient = ctx.createLinearGradient(0, 0, 0, 180)
-            gradient.addColorStop(0, '#C1EF00')
-            gradient.addColorStop(1, '#232323')
+            gradient.addColorStop(0, 'rgba(70, 243, 87, 0.50)')
+            gradient.addColorStop(1, 'rgba(175, 255, 183, 0)')
             return gradient
-        },       
+        },
+             
       },
     ],
   };
 
 const AreaChartComponent = () => {
     return (
-        <Line options={options} data={data} width={300} height={150}/>
+      <div className='container-graph'>
+        <div className='top-graph'>
+        <div className='number-cur'>
+          <span className='number-and-sensor'>Датчик №1</span>
+          <div className='num-container'>
+            <p className='cur-temp'>23.9°С</p>
+            <span className='number-sensor'>(-0.1°С)</span>
+          </div>
+        </div>
+        </div>
+        
+
+        <Line options={options} data={data} className='graph'/>
+      </div>
     )
 }
 
