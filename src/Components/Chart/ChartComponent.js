@@ -11,7 +11,9 @@ import {
   } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from "@faker-js/faker";
+import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import './ChartComponent.css';
+import { useState } from 'react';
   
 ChartJS.register(
     CategoryScale,
@@ -66,7 +68,7 @@ export const data = {
     datasets: [
       {
         label: 'Dataset 2',
-        data: labels.map(() => faker.number.float({ min: 10, max: 50 })
+        data: labels.map(() => faker.number.float({ min: 15, max: 35 })
         ),
         fill: 'start',
         borderWidth: 1,
@@ -84,9 +86,16 @@ export const data = {
   };
 
 const AreaChartComponent = () => {
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  }
+ 
     return (
       <div className='container-graph'>
-        <div className='top-graph'>
+        <div className='topbar-graph'>
         <div className='number-cur'>
           <span className='number-and-sensor'>Датчик №1</span>
           <div className='num-container'>
@@ -94,10 +103,15 @@ const AreaChartComponent = () => {
             <span className='number-sensor'>(-0.1°С)</span>
           </div>
         </div>
+          <div className='time-switch' onClick={handleOpen}>
+            {open ? <div>Is Open</div> : <div>Is Closed</div>}
+              <span className='period-time'>Неделя</span>
+              <ExpandMoreOutlinedIcon className='expand-icon'/>
+          </div>
         </div>
-        
-
-        <Line options={options} data={data} className='graph'/>
+        <div style={{height: "125px"}}>
+          <Line options={options} data={data} className='graph'/>
+        </div>
       </div>
     )
 }

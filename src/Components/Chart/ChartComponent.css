@@ -2,7 +2,7 @@
     width: 700px;
     border: 1px solid #60876F;
     border-radius: 8px;
-    height: 180px;
+    height: 190px;
     background: rgba(51, 51, 51, 0.40);
     margin-top: 8px;
     margin-left: 25px;
@@ -28,6 +28,7 @@
 
 .number-sensor {
     color: #F0F4F2;
+    margin-left: 5px;
 }
 
 .cur-temp {
@@ -35,6 +36,13 @@
     font-size: 18px;
 }
 
-.top-graph {
+.topbar-graph {
     display: flex;
+}
+
+.time-switch {
+    display: flex;
+    color: #F0F4F2;
+    padding-top: 18px;
+    padding-left: 480px;
 }
