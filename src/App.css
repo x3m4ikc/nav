@@ -4,3 +4,7 @@
   width: 100vw;
   background-attachment: fixed;
 }
+
+* {
+  box-sizing: border-box;
+}

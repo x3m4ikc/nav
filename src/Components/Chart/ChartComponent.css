@@ -41,6 +41,7 @@
 }
 
 .time-switch {
+    position: relative;
     display: flex;
     color: #F0F4F2;
     padding-top: 18px;
@@ -49,6 +50,12 @@
 
 /* /DrowDown menu in Chart */
 
+/* Бэк залить в стиль календаря*/
+.dropmenu {
+    top: 100%;
+    position: absolute;
+}
+
 .dropmenu__list {
     display: flex;
     flex-direction: column;
@@ -56,3 +63,5 @@
     align-items: flex-start;
     border: #60876F;
 }
+
+/* Рисую три блока поверх контайнера через opacity актив - 100% у бэкграунда у остальных 0%*/
