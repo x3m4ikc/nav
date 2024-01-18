@@ -33,7 +33,7 @@ const NavMenu = () => {
                         <RemoveOutlinedIcon className='icon-minus'/>
                     </a>
                     <ul className='sub-navigation'>
-                        <li className={setActive}>
+                        <li>
                             {/* <a href='/switch-temp' className='link-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Температура</span>
@@ -44,10 +44,14 @@ const NavMenu = () => {
                             </NavLink>
                         </li>
                         <li className={setActive}>
-                            <a href='/switch-water' className='link-item'>
+                            {/* <a href='/switch-water' className='link-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Влажность и CO2</span>
-                            </a>
+                            </a> */}
+                            <NavLink to='/switch-water' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <span className='nav-text'>Влажность и CO2</span>
+                            </NavLink>
                         </li>
                         <li className={setActive}>
                             <a href='/switch-air' className='link-item'>

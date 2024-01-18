@@ -46,3 +46,13 @@
     padding-top: 18px;
     padding-left: 480px;
 }
+
+/* /DrowDown menu in Chart */
+
+.dropmenu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: #60876F;
+}

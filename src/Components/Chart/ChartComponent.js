@@ -104,7 +104,7 @@ const AreaChartComponent = () => {
           </div>
         </div>
           <div className='time-switch' onClick={handleOpen}>
-            {open ? <div className={`dropmenu ${open ? 'active' : ''}`}>
+            {open ? <div className={`dropmenu ${open ? 'active-but' : ''}`}>
                 <ul className="dropmenu__list">
                     <li className="dropmenu__item">Сутки</li>
                     <li className="dropmenu__item">Неделя</li>
