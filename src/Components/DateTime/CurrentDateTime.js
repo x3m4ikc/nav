@@ -1,4 +1,5 @@
 import './DateTime.css';
+import Moment from "react-moment";
 
 const CurrentDate = () => {
 
@@ -6,18 +7,14 @@ const CurrentDate = () => {
     return curDate;
 };
 
-const CurrentTime = () => {
-
-    const curTime = new Date().toLocaleTimeString({hour: '2-digit', minute: '2-digit'})
-    const timeToShow = curTime.split(':')
-    return timeToShow[0] + ":" + timeToShow[1];
-};
 
 const DateTimeComponent = () => {
     return (
         <div className="datetime">
-            <div className="time">{CurrentTime()}</div>
-            <div className="date">{CurrentDate()}</div>
+            <Moment format="HH:mm" interval={1000} className='time'/>
+            <div className="date">
+            <Moment format="DD.MM.YYYY" interval={1000}/>
+            </div>
         </div>
     )
 }
