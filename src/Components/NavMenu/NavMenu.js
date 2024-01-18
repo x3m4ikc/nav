@@ -3,7 +3,7 @@ import DateTimeComponent from "../DateTime/CurrentDateTime";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const NavMenu = () => {
 
@@ -14,7 +14,7 @@ const NavMenu = () => {
         <div className="nav-menu">
             <DateTimeComponent />
             <ul className='navigation'>
-                <li className={setActive}>
+                <li>
                     <a href='/' className='link-item'>
                         <HomeOutlinedIcon className='nav-icon'/>
                         <span className='nav-text'>Пункт меню</span>
@@ -34,10 +34,14 @@ const NavMenu = () => {
                     </a>
                     <ul className='sub-navigation'>
                         <li className={setActive}>
-                            <a href='/switch-temp' className='link-item'>
+                            {/* <a href='/switch-temp' className='link-item'>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Температура</span>
-                            </a>
+                            </a> */}
+                            <NavLink to='/switch-temp' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                                <SettingsOutlinedIcon className='nav-icon'/>
+                                <span className='nav-text'>Температура</span>
+                            </NavLink>
                         </li>
                         <li className={setActive}>
                             <a href='/switch-water' className='link-item'>
