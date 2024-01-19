@@ -27,7 +27,7 @@ const NavMenu = () => {
                     </NavLink>
                 </li>
                 <li className='navigation-item'>
-                    <a href={pathname} className='link-item'>
+                    <a className='link-item'>
                         <SettingsOutlinedIcon className='nav-icon'/>
                         <span className='nav-text'>Показания датчиков</span>
                         <RemoveOutlinedIcon className='icon-minus'/>
@@ -58,13 +58,13 @@ const NavMenu = () => {
                             </NavLink>
                         </li>
                         <li>
-                        <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                            <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
                             </NavLink>
                         </li>
                         <li>
-                        <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                            <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
                             </NavLink>
@@ -72,16 +72,16 @@ const NavMenu = () => {
                     </ul>
                 </li>
                 <li>
-                    <a href='/select' className='link-item'>
-                    <SettingsOutlinedIcon className='nav-icon'/>
-                    <span className='nav-text'>Пункт меню</span>
-                    </a>
+                    <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                        <SettingsOutlinedIcon className='nav-icon'/>
+                        <span className='nav-text'>Пункт меню</span>
+                    </NavLink>
                 </li>
                 <li>
-                    <a href='/account' className='link-item'>
-                    <SettingsOutlinedIcon className='nav-icon'/>
-                    <span className='nav-text'>Пункт меню</span>
-                    </a>
+                    <NavLink to='/account' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
+                        <SettingsOutlinedIcon className='nav-icon'/>
+                        <span className='nav-text'>Пункт меню</span>
+                    </NavLink>
                 </li>
             </ul>
         </div>
