@@ -47,9 +47,9 @@ a {
 
 .active{
     color: #F0F4F2;
-    border-right: 2px solid #46F357;
-    border-left: 1px solid #46F357;
-    background: linear-gradient(90deg, #46F357 1.23%, #AFFFB7 49.23%, #46F357 98.24%);
+    border-right: 2px solid #196241;
+    border-left: 1px solid #196241;
+    background: linear-gradient(90deg, #196241 1.23%, #60876F 49.23%, #196241 98.24%);
     background-blend-mode: soft-light;
 }
 

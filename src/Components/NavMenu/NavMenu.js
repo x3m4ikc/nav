@@ -15,16 +15,16 @@ const NavMenu = () => {
             <DateTimeComponent />
             <ul className='navigation'>
                 <li>
-                    <a href='/' className='link-item'>
+                    <NavLink to='/' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                         <HomeOutlinedIcon className='nav-icon'/>
                         <span className='nav-text'>Пункт меню</span>
-                    </a>
+                    </NavLink>
                 </li>
                 <li className={setActive}>
-                    <a href='/select' className='link-item'>
+                    <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                         <SettingsOutlinedIcon className='nav-icon'/>
                         <span className='nav-text'>Пункт меню</span>
-                    </a>
+                    </NavLink>
                 </li>
                 <li className='navigation-item'>
                     <a href={pathname} className='link-item'>
@@ -34,58 +34,50 @@ const NavMenu = () => {
                     </a>
                     <ul className='sub-navigation'>
                         <li>
-                            {/* <a href='/switch-temp' className='link-item'>
-                                <SettingsOutlinedIcon className='nav-icon'/>
-                                <span className='nav-text'>Температура</span>
-                            </a> */}
                             <NavLink to='/switch-temp' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Температура</span>
                             </NavLink>
                         </li>
-                        <li className={setActive}>
-                            {/* <a href='/switch-water' className='link-item'>
-                                <SettingsOutlinedIcon className='nav-icon'/>
-                                <span className='nav-text'>Влажность и CO2</span>
-                            </a> */}
+                        <li>
                             <NavLink to='/switch-water' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Влажность и CO2</span>
                             </NavLink>
                         </li>
-                        <li className={setActive}>
-                            <a href='/switch-air' className='link-item'>
+                        <li>
+                            <NavLink to='/switch-air' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
-                            </a>
+                            </NavLink>
                         </li>
-                        <li className={setActive}>
-                            <a href='/select' className='link-item'>
+                        <li>
+                            <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
-                            </a>
+                            </NavLink>
                         </li>
-                        <li className={setActive}>
-                            <a href='/select' className='link-item'>
+                        <li>
+                        <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
-                            </a>
+                            </NavLink>
                         </li>
-                        <li className={setActive}>
-                            <a href='/select' className='link-item'>
+                        <li>
+                        <NavLink to='/select' className={ ({ isActive }) => (isActive ? 'link-item active' : 'link-item')}>
                                 <SettingsOutlinedIcon className='nav-icon'/>
                                 <span className='nav-text'>Пункт подменю</span>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </li>
-                <li className={setActive}>
+                <li>
                     <a href='/select' className='link-item'>
                     <SettingsOutlinedIcon className='nav-icon'/>
                     <span className='nav-text'>Пункт меню</span>
                     </a>
                 </li>
-                <li className={`navigation-item ${setActive}`}>
+                <li>
                     <a href='/account' className='link-item'>
                     <SettingsOutlinedIcon className='nav-icon'/>
                     <span className='nav-text'>Пункт меню</span>

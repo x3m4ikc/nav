@@ -116,10 +116,10 @@ const AreaChartComponent = () => {
             {open ? <div className={`dropmenu ${open ? 'active-but' : ''}`}>
                 <ul className="dropmenu__list">
                     <li className="dropmenu__item" onClick={tagClickHandler} data-period='1'>Сутки</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler}>Неделя</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler}>Месяц</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler}>Год</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler}>Период</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='2'>Неделя</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='3'>Месяц</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='4'>Год</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='5'>Период</li>
                 </ul>
             </div> : <div></div>}
               <span className='period-time'>Неделя</span>
