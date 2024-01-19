@@ -92,6 +92,14 @@ const AreaChartComponent = () => {
   const handleOpen = () => {
     setOpen(!open);
   }
+
+  // Переименовать функц и глянуть плавность
+
+  const tagClickHandler = (event) => {
+    const id = event.target.getAttribute("data-period");
+    console.log(id);
+    document.querySelector('.period-time').innerText = event.target.textContent;
+  }
  
     return (
       <div className='container-graph'>
@@ -104,15 +112,15 @@ const AreaChartComponent = () => {
           </div>
         </div>
           <div className='time-switch' onClick={handleOpen}>
-            {open ? <div className={`dropmenu ${open ? 'active' : ''}`}>
-                <ul className="dropmenu__list">
-                    <li className="dropmenu__item">Сутки</li>
-                    <li className="dropmenu__item">Неделя</li>
-                    <li className="dropmenu__item">Месяц</li>
-                    <li className="dropmenu__item">Год</li>
-                    <li className="dropmenu__item">Период</li>
-                </ul>
 
+            {open ? <div className={`dropmenu ${open ? 'active-but' : ''}`}>
+                <ul className="dropmenu__list">
+                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='1'>Сутки</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler}>Неделя</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler}>Месяц</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler}>Год</li>
+                    <li className="dropmenu__item" onClick={tagClickHandler}>Период</li>
+                </ul>
             </div> : <div></div>}
               <span className='period-time'>Неделя</span>
               <ExpandMoreOutlinedIcon className='expand-icon'/>
