@@ -8,7 +8,7 @@
     border: 1px solid #60876F;
     border-radius: 8px;
     color: #60876F;
-    padding: 12px 22px;
+    padding: 12px 20.5px;
     font-size: 14px;
     margin-left: 10px;
 }
@@ -18,8 +18,12 @@
     border: 1px solid #60876F;
     border-radius: 8px;
     color: #60876F;
-    padding: 12px 132px;
+    padding: 12px 131px;
     font-size: 14px;
     margin-left: 10px;
 }
 
+.activeBut {
+    background: linear-gradient(90deg, #196241 1.23%, #60876F 49.23%, #196241 98.24%);
+    color: #F0F4F2;
+}

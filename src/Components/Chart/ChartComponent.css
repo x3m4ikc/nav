@@ -61,7 +61,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: #60876F;
+    border: 1px solid #60876F;
+    border-radius: 8px;
 }
 
 /* Рисую три блока поверх контайнера через opacity актив - 100% у бэкграунда у остальных 0%*/

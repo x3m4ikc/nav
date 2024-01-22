@@ -25,8 +25,31 @@ ChartJS.register(
     Filler,
     Legend
   );
-  
-export const options = {
+
+const AreaChartComponent = (props) => {
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  }
+
+  const tagPeriodSwitcher = (event) => {
+    const id = event.target.getAttribute("data-period");
+    // Создать запрос attrs: idSens & period
+    console.log(id);
+    document.querySelector('.period-time').innerText = event.target.textContent;
+  }
+
+  const generateRandomData = (count) => {
+    const data = []
+    for (let i = 0; i < count; i++) {
+      data.push(faker.number.float({ min: 15, max: 35 }))
+    }
+    return data;
+  }
+
+  const options = {
     maintainAspectRatio: false,
     responsive: true,
     scales: {
@@ -60,16 +83,14 @@ export const options = {
       },
     },
   };
-  
-const labels = ['Фев 06', 'Фев 07', 'Фев 08', 'Фев 09', 'Фев 10', 'Фев 11', 'Фев 12'];
-  
-export const data = {
-    labels,
+
+  const data = {
+    labels: Array.from({length: 125}, (_, i) => i),
     datasets: [
       {
         label: 'Dataset 2',
-        data: labels.map(() => faker.number.float({ min: 15, max: 35 })
-        ),
+        lineTension: 0.7,
+        data: generateRandomData(315),
         fill: 'start',
         borderWidth: 1,
         borderColor: '#6fff8c',
@@ -84,42 +105,25 @@ export const data = {
       },
     ],
   };
-
-const AreaChartComponent = () => {
-
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(!open);
-  }
-
-  // Переименовать функц и глянуть плавность
-
-  const tagClickHandler = (event) => {
-    const id = event.target.getAttribute("data-period");
-    console.log(id);
-    document.querySelector('.period-time').innerText = event.target.textContent;
-  }
  
     return (
       <div className='container-graph'>
         <div className='topbar-graph'>
         <div className='number-cur'>
-          <span className='number-and-sensor'>Датчик №1</span>
+          <span className='number-and-sensor'>{props.name}</span>
           <div className='num-container'>
             <p className='cur-temp'>23.9°С</p>
             <span className='number-sensor'>(-0.1°С)</span>
           </div>
         </div>
           <div className='time-switch' onClick={handleOpen}>
-
             {open ? <div className={`dropmenu ${open ? 'active-but' : ''}`}>
                 <ul className="dropmenu__list">
-                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='1'>Сутки</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='2'>Неделя</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='3'>Месяц</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='4'>Год</li>
-                    <li className="dropmenu__item" onClick={tagClickHandler} data-period='5'>Период</li>
+                    <li className="dropmenu__item" onClick={tagPeriodSwitcher} data-period='1'>Сутки</li>
+                    <li className="dropmenu__item" onClick={tagPeriodSwitcher} data-period='2'>Неделя</li>
+                    <li className="dropmenu__item" onClick={tagPeriodSwitcher} data-period='3'>Месяц</li>
+                    <li className="dropmenu__item" onClick={tagPeriodSwitcher} data-period='4'>Год</li>
+                    <li className="dropmenu__item" onClick={tagPeriodSwitcher} data-period='5'>Период</li>
                 </ul>
             </div> : <div></div>}
               <span className='period-time'>Неделя</span>

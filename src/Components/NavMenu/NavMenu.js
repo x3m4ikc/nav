@@ -3,11 +3,10 @@ import DateTimeComponent from "../DateTime/CurrentDateTime";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavMenu = () => {
 
-    const {pathname} = useLocation();
     const setActive = ({isActive}) => isActive ? "active" : "";
 
     return (

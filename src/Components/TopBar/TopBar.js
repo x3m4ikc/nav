@@ -6,6 +6,7 @@ import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import image_2 from '../../static/images/Container_2.png';
 import { useLocation } from 'react-router-dom';
+import RadioButtonCheckedOutlinedIcon from '@mui/icons-material/RadioButtonCheckedOutlined';
 
 const TopBar = () => {
 
@@ -39,11 +40,45 @@ const TopBar = () => {
                     </div>
                 </Box>
             </Box>
-            <img src={image_2} alt='Container_image' className='container-image'/>
+                <img src={image_2} alt='Container_image' className='container-image'/>
+
+                <div className='layer_1'>
+                    <div className='radioicon-holder_1'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }} /><span className='holder_text'>Датчик №1</span>
+                    </div>
+                    <div className='radioicon-holder_2'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }}/><span className='holder_text'>Датчик №2</span>
+                    </div>
+                </div>
+
+                <div className='layer_2'>
+                    <div className='radioicon-holder_1'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }} /><span className='holder_text'>Датчик №1</span>
+                    </div>
+                    <div className='radioicon-holder_2'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }}/><span className='holder_text'>Датчик №2</span>
+                    </div>
+                </div>
+
+                <div className='layer_3'>
+                    <div className='radioicon-holder_1'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }} /><span className='holder_text'>Датчик №1</span>
+                    </div>
+                    <div className='radioicon-holder_2'>
+                        <RadioButtonCheckedOutlinedIcon style={{ fontSize: 14, color: '#46F357' }}/><span className='holder_text'>Датчик №2</span>
+                    </div>
+                </div>
+
+                <div className='layer_4'>
+
+                </div>
+            
         </Box>
         ) : (
             <Box className="topbar">
-            <img src={image_2} alt='Container_image' className='container-image-water'/>
+                <div>
+                    <img src={image_2} alt='Container_image' className='container-image-water'/>
+                </div>
         </Box>
         )
     )

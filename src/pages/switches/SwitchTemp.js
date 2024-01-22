@@ -11,8 +11,8 @@ const SwitchTemp = () => {
             <Box>
                 <TopBar/>
                 <SensorButtons/>
-                <AreaChartComponent/>
-                <AreaChartComponent/>
+                <AreaChartComponent name="Датчик 1"/>
+                <AreaChartComponent name="Датчик 2"/>
             </Box>
         </Box>
     )
