@@ -1,6 +1,6 @@
 import NavMenu from "../../Components/NavMenu/NavMenu";
 import TopBar from '../../Components/TopBar/TopBar';
-import SensorButtons from "../../Components/SensorButtons/SensorButtons";
+import SensorButtonsWater from "../../Components/SensorButtons/SensorButtonsWater";
 import AreaChartComponent from "../../Components/Chart/ChartComponent";
 import { Box } from '@mui/material';
 
@@ -10,7 +10,7 @@ const SwitchWater = () => {
             <NavMenu />
             <Box>
                 <TopBar/>
-                <SensorButtons/>
+                <SensorButtonsWater/>
                 <AreaChartComponent name="Датчик 1"/>
                 <AreaChartComponent name="Датчик 2"/>
             </Box>

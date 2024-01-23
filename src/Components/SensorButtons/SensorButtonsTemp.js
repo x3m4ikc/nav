@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import './SensorButtons.css'
-import { useLocation } from "react-router-dom";
 
-const SensorButtons = () => {
+export const SensorButtonsTemp = () => {
 
-    const {pathname} = useLocation();
 
     const [activeButton, setActiveButton] = useState(1);
     
@@ -13,9 +11,7 @@ const SensorButtons = () => {
         console.log(group)
       };
 
-    switch(pathname) {
-        case '/switch-temp':
-            return (
+    return (
                 <div className="buttons-holder">
                     <button onClick={() => handleButtonClick(1)} className={activeButton === 1 ? 'but activeBut': 'but'}>Группа датчиков 1</button>
                     <button onClick={() => handleButtonClick(2)} className={activeButton === 2 ? 'but activeBut': 'but'}>Группа датчиков 2</button>
@@ -23,18 +19,6 @@ const SensorButtons = () => {
                     <button onClick={() => handleButtonClick(4)} className={activeButton === 4 ? 'but activeBut': 'but'}>Внешние датчики</button>
                 </div> 
             )
-        case '/switch-water':
-            return (
-                <div className="buttons-holder">
-                  <button onClick={() => handleButtonClick(1)} className={activeButton === 1 ? 'but-air activeBut': 'but-air'}>Влажность</button>
-                  <button onClick={() => handleButtonClick(2)} className={activeButton === 2 ? 'but-air activeBut': 'but-air'}>Уровень CO2</button>
-                </div>
-            )
-        default:
-            return (
-                <div></div>
-            )
-    }
 }
 
-export default SensorButtons;
+export default SensorButtonsTemp;

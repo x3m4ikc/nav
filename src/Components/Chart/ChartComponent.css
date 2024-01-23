@@ -57,6 +57,10 @@
 }
 
 .dropmenu__list {
+    width: 80px;
+    margin-top: -15px;
+    background: rgba(51, 51, 51, 0.40);
+    backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,4 +69,8 @@
     border-radius: 8px;
 }
 
-/* Рисую три блока поверх контайнера через opacity актив - 100% у бэкграунда у остальных 0%*/
+.dropmenu__item {
+    color: #60876F;
+    font-size: 14px;
+    padding-left: 5px;
+}
