@@ -37,6 +37,8 @@ const AreaChartComponent = (props) => {
       const date1 = new Date(2024, 1, 20).getTime();
       const date2 = new Date(2024, 1, 20, 23, 59, 59).getTime();
 
+
+        // F-string
       try {
         const response = await axios.get('http://192.168.192.110:5005/db/temperatures/1', {
           params: { 'start': date1 / 1000, 'end': date2 / 1000 }
