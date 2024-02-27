@@ -13,6 +13,7 @@ const SwitchTemp = () => {
         console.log(group)
       };
 
+    // Написать отрисовку графиков здесь
 
     return (
         <Box sx={{ display: 'flex'}}>
