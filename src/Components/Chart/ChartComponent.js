@@ -27,7 +27,7 @@ ChartJS.register(
     Legend
   );
 
-let graph_data = NaN
+let graph_data
 
 const getSensorsData = () => {
     const date1 = new Date(2024, 1, 20).getTime();
@@ -38,15 +38,12 @@ const getSensorsData = () => {
 
       graph_data = Object.values(values.data.result).map(item => item.value);
       console.log("func: getSensorsData")
-      console.log(graph_data, date1/1000, date2/1000);
     })
     return graph_data;
   }
 
 const AreaChartComponent = (props) => {
-
-  graph_data = getSensorsData()
-
+  
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -99,7 +96,8 @@ const AreaChartComponent = (props) => {
       {
         label: 'Dataset 2',
         lineTension: 0.7,
-        data: graph_data,
+        data: getSensorsData(),
+        // data: graph_data,
         fill: 'start',
         borderWidth: 1,
         borderColor: '#6fff8c',
