@@ -5,12 +5,22 @@ import AreaChartComponent from "../../Components/Chart/ChartComponent";
 import { Box } from '@mui/material';
 
 const SwitchTemp = () => {
+
+    const [activeButton, setActiveButton] = useState(1);
+    
+    const handleButtonClick = (group) => {
+        setActiveButton(group);
+        console.log(group)
+      };
+
+
     return (
         <Box sx={{ display: 'flex'}}>
             <NavMenu />
             <Box>
                 <TopBar/>
                 <SensorButtonsTemp/>
+                {if (activeButton === 1)}
                 <AreaChartComponent name="Датчик 1"/>
                 <AreaChartComponent name="Датчик 2"/>
             </Box>

@@ -1,15 +1,6 @@
-import { useState } from 'react';
 import './SensorButtons.css'
 
-export const SensorButtonsTemp = () => {
-
-
-    const [activeButton, setActiveButton] = useState(1);
-    
-    const handleButtonClick = (group) => {
-        setActiveButton(group);
-        console.log(group)
-      };
+export const SensorButtonsTemp = (props) => {
 
     return (
                 <div className="buttons-holder">

@@ -27,20 +27,6 @@ ChartJS.register(
     Legend
   );
 
-let graph_data
-
-const getSensorsData = () => {
-    
-
-    axios.get('http://192.168.192.110:5005/db/temperatures/1', 
-    {params: {'start': date1/1000, 'end': date2/1000}}).then(values => {
-
-      graph_data = Object.values(values.data.result).map(item => item.value);
-      console.log("func: getSensorsData")
-    })
-    return graph_data;
-  }
-
 const AreaChartComponent = (props) => {
   
   const [open, setOpen] = useState(false);
