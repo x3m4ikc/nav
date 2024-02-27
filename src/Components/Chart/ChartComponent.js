@@ -14,6 +14,7 @@ import { faker } from "@faker-js/faker";
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import './ChartComponent.css';
 import { useState } from 'react';
+import axios from 'axios';
   
 ChartJS.register(
     CategoryScale,
@@ -26,7 +27,25 @@ ChartJS.register(
     Legend
   );
 
+let graph_data = NaN
+
+const getSensorsData = async () => {
+    const date1 = new Date(2024, 1, 20).getTime();
+    const date2 = new Date(2024, 1, 20, 23, 59, 59).getTime();
+
+    axios.get('http://192.168.192.110:5005/db/temperatures/1', 
+    {params: {'start': date1/1000, 'end': date2/1000}}).then(values => {
+
+      graph_data = Object.values(values.data.result).map(item => item.value);
+      console.log("func: getSensorsData")
+      console.log(graph_data);
+      return graph_data;
+    })
+  }
+
 const AreaChartComponent = (props) => {
+
+  
 
   const [open, setOpen] = useState(false);
 
@@ -34,9 +53,10 @@ const AreaChartComponent = (props) => {
     setOpen(!open);
   }
 
-  const tagPeriodSwitcher = (event) => {
+  const tagPeriodSwitcher = async (event) => {
     const id = event.target.getAttribute("data-period");
-    // Создать запрос attrs: idSens & period
+    const data = await getSensorsData();
+    console.log(graph_data + " in TagSwitcher");
     console.log(id);
     document.querySelector('.period-time').innerText = event.target.textContent;
   }
@@ -90,6 +110,7 @@ const AreaChartComponent = (props) => {
       {
         label: 'Dataset 2',
         lineTension: 0.7,
+        // data: graph_data,
         data: generateRandomData(315),
         fill: 'start',
         borderWidth: 1,
