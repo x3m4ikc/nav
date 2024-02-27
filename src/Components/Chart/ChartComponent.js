@@ -29,7 +29,7 @@ ChartJS.register(
 
 let graph_data = NaN
 
-const getSensorsData = async () => {
+const getSensorsData = () => {
     const date1 = new Date(2024, 1, 20).getTime();
     const date2 = new Date(2024, 1, 20, 23, 59, 59).getTime();
 
@@ -38,14 +38,16 @@ const getSensorsData = async () => {
 
       graph_data = Object.values(values.data.result).map(item => item.value);
       console.log("func: getSensorsData")
-      console.log(graph_data);
-      return graph_data;
+      console.log(graph_data, date1/1000, date2/1000);
     })
+    return graph_data;
   }
 
 const AreaChartComponent = (props) => {
 
-  
+  if (!graph_data) {
+    getSensorsData();
+  }
 
   const [open, setOpen] = useState(false);
 
@@ -55,18 +57,7 @@ const AreaChartComponent = (props) => {
 
   const tagPeriodSwitcher = async (event) => {
     const id = event.target.getAttribute("data-period");
-    const data = await getSensorsData();
-    console.log(graph_data + " in TagSwitcher");
-    console.log(id);
     document.querySelector('.period-time').innerText = event.target.textContent;
-  }
-
-  const generateRandomData = (count) => {
-    const data = []
-    for (let i = 0; i < count; i++) {
-      data.push(faker.number.float({ min: 15, max: 35 }))
-    }
-    return data;
   }
 
   const options = {
@@ -110,8 +101,7 @@ const AreaChartComponent = (props) => {
       {
         label: 'Dataset 2',
         lineTension: 0.7,
-        // data: graph_data,
-        data: generateRandomData(315),
+        data: getSensorsData(),
         fill: 'start',
         borderWidth: 1,
         borderColor: '#6fff8c',
