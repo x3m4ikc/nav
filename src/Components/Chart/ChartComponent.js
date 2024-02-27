@@ -13,7 +13,7 @@ import { Line } from 'react-chartjs-2';
 import { faker } from "@faker-js/faker";
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import './ChartComponent.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
   
 ChartJS.register(
@@ -30,8 +30,7 @@ ChartJS.register(
 let graph_data
 
 const getSensorsData = () => {
-    const date1 = new Date(2024, 1, 20).getTime();
-    const date2 = new Date(2024, 1, 20, 23, 59, 59).getTime();
+    
 
     axios.get('http://192.168.192.110:5005/db/temperatures/1', 
     {params: {'start': date1/1000, 'end': date2/1000}}).then(values => {
@@ -45,6 +44,29 @@ const getSensorsData = () => {
 const AreaChartComponent = (props) => {
   
   const [open, setOpen] = useState(false);
+  const [graphData, setGraphData] = useState([]);
+
+  useEffect(() => {
+    const getSensorsData = async () => {
+      const date1 = new Date(2024, 1, 20).getTime();
+      const date2 = new Date(2024, 1, 20, 23, 59, 59).getTime();
+
+      try {
+        const response = await axios.get('http://192.168.192.110:5005/db/temperatures/1', {
+          params: { 'start': date1 / 1000, 'end': date2 / 1000 }
+        });
+        const data = Object.values(response.data.result).map(item => item.value);
+        setGraphData(data);
+        console.log("func: getSensorsData");
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    getSensorsData();
+  }, []);
+
+  
 
   const handleOpen = () => {
     setOpen(!open);
@@ -96,7 +118,7 @@ const AreaChartComponent = (props) => {
       {
         label: 'Dataset 2',
         lineTension: 0.7,
-        data: getSensorsData(),
+        data: graphData,
         // data: graph_data,
         fill: 'start',
         borderWidth: 1,
