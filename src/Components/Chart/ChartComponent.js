@@ -45,9 +45,7 @@ const getSensorsData = () => {
 
 const AreaChartComponent = (props) => {
 
-  if (!graph_data) {
-    getSensorsData();
-  }
+  graph_data = getSensorsData()
 
   const [open, setOpen] = useState(false);
 
@@ -55,7 +53,7 @@ const AreaChartComponent = (props) => {
     setOpen(!open);
   }
 
-  const tagPeriodSwitcher = async (event) => {
+  const tagPeriodSwitcher = (event) => {
     const id = event.target.getAttribute("data-period");
     document.querySelector('.period-time').innerText = event.target.textContent;
   }
@@ -101,7 +99,7 @@ const AreaChartComponent = (props) => {
       {
         label: 'Dataset 2',
         lineTension: 0.7,
-        data: getSensorsData(),
+        data: graph_data,
         fill: 'start',
         borderWidth: 1,
         borderColor: '#6fff8c',
